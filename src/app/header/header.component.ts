@@ -14,6 +14,9 @@ import {
   animateChild
 } from '@angular/animations';
 
+import { UsersService } from '../users/users.service';
+import { User } from '../users/user';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -61,18 +64,30 @@ import {
   ],
 })
 export class HeaderComponent implements OnInit {
-  mobMenuIsOpen: boolean = false;
-  windWidth: any;
+  public currentUser: User;
+  public mobMenuIsOpen: boolean = false;
+  private currentUserId: number = 1;
+  private windWidth: any;
 
-  constructor() { }
+  constructor(
+    private usersService: UsersService
+  ) { }
 
   ngOnInit() {
     this.windWidth = window.innerWidth;
+    this.getCurrentUser();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.windWidth = window.innerWidth;
+  }
+
+  getCurrentUser(): void {
+    this.usersService.getUser(this.currentUserId)
+    .subscribe(data => {
+      this.currentUser = data.user;
+    });
   }
 
   toggleMenu(): void {

@@ -21,14 +21,14 @@
             <div class="col-12 col-lg-auto order-lg-1 custom-bs-padding">
               <div class="user-info">
                 <div class="user-img">
-                  <img src="assets/images/user-superstar-2x.jpg" alt="User Superstar">
+                  <img [src]="currentUser?.photo || ''" alt="User Superstar">
                 </div>
                 <div class="user-name">
                   <div class="nickname">
-                    Superstar
+                    {{currentUser?.name}}
                   </div>
                   <div class="email">
-                    Superstar@gmail.com
+                    {{currentUser?.email}}
                   </div>
                 </div>
                 <div class="auth-icon d-none d-lg-block">

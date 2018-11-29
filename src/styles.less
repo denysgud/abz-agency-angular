@@ -114,6 +114,7 @@ ul {
 }
 
 .abz-btn {
+  position: relative;
   height: 40px;
   width: 290px;
   border: 2px solid #EF6C00;
@@ -145,6 +146,11 @@ ul {
       border-color: #FC7E17;
       background-color: #FEE6D2;
     }
+  }
+  .abz-loader {
+    position: absolute;
+    top: 11px;
+    left: 140px;
   }
 }
 .abz-btn-text {
@@ -266,5 +272,49 @@ ul {
     top: 60px;
     left: 17px;
     color: #B7B7B7;
+  }
+}
+
+.abz-loader {
+  background: #FC7E17;
+  animation: load1 1s infinite ease-in-out;
+  width: 5px;
+  height: 20px;
+  color: #FC7E17;
+  text-indent: -1000px;
+  position: relative;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+  margin: auto;
+  &:before,
+  &:after {
+    background: #FC7E17;
+    animation: load1 1s infinite ease-in-out;
+    width: 5px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    content: '';
+  }
+  &:before {
+    left: -7.5px;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  &:after {
+    left: 7.5px;
+  }
+}
+
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 20px;
+  }
+  40% {
+    box-shadow: 0 -10px;
+    height: 25px;
   }
 }

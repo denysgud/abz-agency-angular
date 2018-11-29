@@ -1,0 +1,41 @@
+<section id="users" class="users section--light">
+  <div class="container custom-bs-padding">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center">Our cheerful users</h2>
+        <h5 class="text-center">Attention! Sorting users by registration date</h5>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4" *ngFor="let user of users">
+        <div class="user">
+          <div class="user__image">
+            <img [src]="user.photo" alt="{{user.name}}">
+          </div>
+          <div class="user__info">
+            <h4 class="user__name">
+              {{user.name}}
+            </h4>
+            <div class="user__data">
+              <p class="p3">
+                {{user.position}}<br>
+                {{user.email}}<br>
+                {{user.phone}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-12"
+        *ngIf="maxNumUsers > users?.length">
+        <div
+          class="show-more abz-btn abz-btn--secondary"
+          (click)="loadMoreUsers()">
+          <span *ngIf="!userLoading">Show more</span>
+          <div
+            class="abz-loader"
+            *ngIf="userLoading">Loading...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

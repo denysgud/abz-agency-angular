@@ -1,0 +1,80 @@
+.users {
+  padding-top: 65px;
+  @media screen and (min-width: 768px) {
+    padding-top: 114px;
+  }
+  @media screen and (min-width: 992px) {
+    padding-top: 136px;
+  }
+  h2 {
+    margin-bottom: 15px;
+  }
+  h5 {
+    width: 170px;
+    margin: 0 auto 34px auto;
+    @media screen and (min-width: 576px) {
+      width: auto;
+      margin-bottom: 38px;
+    }
+    @media screen and (min-width: 992px) {
+      margin-bottom: 58px;
+    }
+  }
+  .user {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    text-align: center;
+    @media screen and (min-width: 576px) {
+      margin-bottom: 41px;
+    }
+    @media screen and (min-width: 768px) {
+      margin-bottom: 31px;
+    }
+    @media screen and (min-width: 992px) {
+      margin-bottom: 52px;
+      flex-direction: row;
+      text-align: left;
+    }
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 41px;
+    }
+  }
+  .user__image {
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+  }
+  .user__info {
+    width: 100%;
+    @media screen and (min-width: 576px) {
+      width: 240px;
+    }
+    @media screen and (min-width: 768px) {
+      width: 220px;
+    }
+    @media screen and (min-width: 992px) {
+      padding-left: 10px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: 290px;
+    }
+  }
+  .user__name {
+    margin: 13px 0 4px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media screen and (min-width: 992px) {
+      margin: 23px 0 7px 0;
+    }
+  }
+  .user__data p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .show-more {
+    margin: auto;
+  }
+}
