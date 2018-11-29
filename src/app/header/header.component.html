@@ -1,0 +1,98 @@
+<header class="site-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-auto custom-bs-padding">
+        <div class="logo centered-block">
+          <a href="#">
+            <img src="assets/images/logo.svg" alt="ABZ agency logo">
+          </a>
+        </div>
+      </div>
+      <div
+        id="mobMenu"
+        class="col-lg"
+        [@mobMenuBackgroundAnimation]="mobMenuIsOpen ? 'open' : 'closed'"
+        (click)="toggleMenu()">
+        <div
+          id="menuContainer"
+          [@mobMenuAnimation]="mobMenuIsOpen ? 'open' : 'closed'"
+          appClickStopPropagation>
+          <div class="row">
+            <div class="col-12 col-lg-auto order-lg-1 custom-bs-padding">
+              <div class="user-info">
+                <div class="user-img">
+                  <img src="assets/images/user-superstar-2x.jpg" alt="User Superstar">
+                </div>
+                <div class="user-name">
+                  <div class="nickname">
+                    Superstar
+                  </div>
+                  <div class="email">
+                    Superstar@gmail.com
+                  </div>
+                </div>
+                <div class="auth-icon d-none d-lg-block">
+                  <img src="assets/images/sign-out.svg" alt="Sign out">
+                </div>
+              </div>
+            </div>
+            <nav class="col-12 col-lg order-lg-0">
+              <ul>
+                <li>
+                  <a
+                    href="#aboutMe"
+                    (click)="toggleMenu()">
+                    About me
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#relationships"
+                    (click)="toggleMenu()">
+                    Relationships
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#requirements"
+                    (click)="toggleMenu()">
+                    Requirements
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#users"
+                    (click)="toggleMenu()">
+                    Users
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#signUp"
+                    (click)="toggleMenu()">
+                    Sign Up
+                  </a>
+                </li>
+                <li class="d-lg-none">
+                  <a
+                    href="#"
+                    (click)="toggleMenu()">
+                    Sign Out
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="col d-lg-none custom-bs-padding">
+        <div class="mob-menu-icon">
+          <img
+            src="assets/images/line-menu.svg"
+            alt="Menu"
+            (click)="toggleMenu()">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

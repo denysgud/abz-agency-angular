@@ -1,1 +1,270 @@
-/* You can add global styles to this file, and also import other style files */
+/* Libraries */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* Fonts */
+@font-face {
+  font-family: 'Overpass';
+  src: url('assets/fonts/Overpass/Overpass-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'SSP Regular';
+  src: url('assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
+}
+@font-face {
+  font-family: 'SSP Bold';
+  src: url('assets/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf');
+}
+
+/* Global styles */
+body {
+  font-family: 'SSP Regular';
+  line-height: 1.35;
+}
+h1, h2, h3, h4 {
+  font-family: 'Overpass';
+}
+h1 {
+  font-size: 30px;
+  @media screen and (min-width: 768px) {
+    font-size: 42px;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 50px;
+  }
+}
+h2 {
+  font-size: 26px;
+  @media screen and (min-width: 992px) {
+    font-size: 42px;
+  }
+}
+h3 {
+  font-size: 22px;
+  @media screen and (min-width: 992px) {
+    font-size: 26px;
+  }
+}
+h4 {
+  font-size: 22px;
+}
+h5 {
+  line-height: 1.35;
+  font-family: 'SSP Regular';
+  font-size: 16px;
+  @media screen and (min-width: 992px) {
+    font-size: 18px;
+  }
+}
+
+p {
+  &.p2 {
+    font-size: 16px;
+  }
+  &.p3 {
+    font-size: 14px;
+  }
+}
+
+a {
+  color: #000;
+  .svg-icon {
+    fill: #000;
+  }
+  &:hover {
+    color: #EF6C00;
+    text-decoration: none;
+    .svg-icon {
+      fill: #EF6C00;
+    }
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.custom-bs-padding { /* Managing bootstrap column/container padding */
+  @media screen and (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @media screen and (min-width: 992px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.centered-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section--dark {
+  color: #fff;
+}
+.section--light {
+  color: #000;
+}
+
+.abz-btn {
+  height: 40px;
+  width: 290px;
+  border: 2px solid #EF6C00;
+  border-radius: 3px;
+  background-color: #EF6C00;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'SSP Bold';
+  font-size: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #FC7E17;
+    border-color: #FC7E17;
+    color: #fff;
+  }
+  &:disabled {
+    background-color: #D7D7D7;
+    border-color: #D7D7D7;
+    color: #8C8B8B;
+    cursor: no-drop;
+  }
+  &--secondary {
+    color: #EF6C00;
+    background-color: #fff;
+    &:hover {
+      color: #FC7E17;
+      border-color: #FC7E17;
+      background-color: #FEE6D2;
+    }
+  }
+}
+.abz-btn-text {
+  font-family: 'SSP Bold';
+  font-size: 22px;
+  color: #EF6C00;
+  &:hover {
+    color: #FC7E17;
+  }
+}
+
+.abz-input-group {
+  position: relative;
+  margin-bottom: 35px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+  label {
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    background-color: #fff;
+    color: #B7B7B7;
+    font-size: 12px;
+    padding: 0 3px;
+  }
+  .hint {
+    position: absolute;
+    bottom: -5px;
+    font-size: 12px;
+    color: #B7B7B7;
+  }
+  .input-field {
+    height: 56px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #B7B7B7;
+    padding: 15px;
+    &:focus {
+      outline: none;
+      border-width: 2px;
+    }
+  }
+  select {
+    -webkit-appearance: none;
+    background: transparent;
+  }
+  &.select-group {
+    background-image: url("assets/images/caret-down.svg");
+    background-color: #fff;
+    background-position: 96%;
+    background-repeat: no-repeat;
+    @media screen and (min-width: 992px) {
+      background-position: 98%;
+    }
+  }
+}
+.abz-file-upload {
+  position: relative;
+  label {
+    display: flex;
+    .src {
+      height: 56px;
+      width: 81%;
+      border-radius: 3px 0 0 3px;
+      border: 1px solid #B7B7B7;
+      border-right-width: 0;
+      padding: 15px;
+      @media screen and (min-width: 768px) {
+        width: 63%;
+      }
+      @media screen and (min-width: 992px) {
+        width: 77%;
+      }
+    }
+    .upload-btn {
+      height: 56px;
+      width: 19%;
+      border-radius: 0 3px 3px 0;
+      border: 2px solid #EF6C00;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #EF6C00;
+      font-family: 'SSP Bold';
+      font-size: 20px;
+      cursor: pointer;
+      @media screen and (min-width: 768px) {
+        width: 37%;
+      }
+      @media screen and (min-width: 992px) {
+        width: 23%;
+      }
+      &:hover {
+        color: #FC7E17;
+        border-color: #FC7E17;
+        background-color: #FEE6D2;
+      }
+    }
+  }
+  input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    &:focus {
+      & + label {
+        .src {
+          border-width: 2px;
+        }
+      }
+    }
+  }
+  .hint {
+    font-size: 12px;
+    position: absolute;
+    top: 60px;
+    left: 17px;
+    color: #B7B7B7;
+  }
+}

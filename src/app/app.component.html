@@ -1,20 +1,356 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<app-header></app-header>
+<main>
+  <section class="about-assignment section--dark">
+    <div class="container custom-bs-padding">
+      <h1>
+        Test assignment for<br>
+        Frontend Developer<br>
+        position
+      </h1>
+      <p>
+        We kindly remind you that your test assignment should be submitted as a link
+        to github/bitbucket repository. <span class="d-none d-sm-inline">Please be patient, we consider and respond to
+        every application that meets minimum requirements. We look forward to your
+        submission. Good luck!</span>
+      </p>
+      <a class="abz-btn" href="#signUp">
+        Sign Up
+      </a>
+    </div>
+  </section>
+  <section id="aboutMe" class="get-acquainted section--light">
+    <div class="container custom-bs-padding">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center">Let's get acquainted</h2>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+          <img src="assets/images/man-mobile.svg" alt="Man mobile">
+        </div>
+        <div class="col-12 col-md-8 get-acquainted-text">
+          <h3>I am cool frontend developer</h3>
+          <p>
+            We will evaluate how clean your approach to writing CSS and Javascript code is.
+            You can use any CSS and Javascript 3rd party libraries without any restriction.
+          </p>
+          <p>
+            If 3rd party css/javascript libraries are added to the project via bower/npm/yarn
+            you will get bonus points. If you use any task runner (gulp/webpack) you will
+            get bonus points as well.
+          </p>
+          <p>
+            Slice service directory page P​ SD mockup​ into HTML5/CSS3. 
+          </p>
+          <a class="abz-btn-text" href="#signUp">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="relationships" class="skills section--light">
+    <div class="container custom-bs-padding">
+      <div class="row">
+        <div class="col-12">
+          <h2>
+            About my relationships with web-development
+          </h2>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="skill">
+            <div class="skill__image">
+              <img src="assets/images/html.svg" alt="html">
+            </div>
+            <div class="skill__info">
+              <h3 class="skill__title">
+                I'm in love with HTML
+              </h3>
+              <p class="skill__desc">
+                Hypertext Markup Language (HTML) is the standard markup language for creating
+                web pages and web applications.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="skill">
+            <div class="skill__image">
+              <img src="assets/images/css.svg" alt="html">
+            </div>
+            <div class="skill__info">
+              <h3 class="skill__title">
+                  CSS is my best friend
+              </h3>
+              <p class="skill__desc">
+                Cascading Style Sheets (CSS) is a style sheet language used for describing
+                the presentation of a document written in a markup language like HTML.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="skill">
+            <div class="skill__image">
+              <img src="assets/images/javascript.svg" alt="html">
+            </div>
+            <div class="skill__info">
+              <h3 class="skill__title">
+                JavaScript is my passion
+              </h3>
+              <p class="skill__desc">
+                JavaScript is a high-level, interpreted programming language. It is a language
+                which is also characterized as dynamic, weakly typed, prototype-based
+                and multi-paradigm.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="requirements" class="requirements section--dark">
+    <div class="container custom-bs-padding">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center">General requirements for the test task</h2>
+        </div>
+        <div class="col-12 col-md-6 order-md-1 text-center">
+          <img src="assets/images/man-laptop.svg" alt="Man with laptop">
+        </div>
+        <div class="col-12 col-md-6 requirements-text">
+          <p>
+            Test assignment is split into two parts. Part 1 is required and you must complete
+            it fully to be considered. Part 2 consists of optional tasks that you can complete
+            to show your experience in web development field.
+          </p>
+          <p>
+            If you have experience with Angular / React frameworks try to implement as many tasks
+            from Part 2 as possible to prove your overall proficiency and skills.
+          </p>
+          <p>
+            We recommend you to use ​“Pixel Perfect” Google Chrome extension​ or similar. We will use
+            this extension to review your test assignment.
+          </p>
+          <p>
+            You should send your solution to our email address hr@abz.agency as a link to
+            github/bitbucket repository. If you submit your solution in any other form
+            (as a link to zip archive, attached zip file, etc.) – your application won’t be considered!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="users" class="users section--light">
+    <div class="container custom-bs-padding">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center">Our cheerful users</h2>
+          <h5 class="text-center">Attention! Sorting users by registration date</h5>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="user">
+            <div class="user__image">
+              <img src="assets/images/user-noah-2x.jpg" alt="Noah">
+            </div>
+            <div class="user__info">
+              <h4 class="user__name">
+                Noah
+              </h4>
+              <div class="user__data">
+                <p class="p3">
+                  Product Manager<br>
+                  noah.product.manager@gmail.com<br>
+                  +3 (8050) 678-03-24
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="user">
+            <div class="user__image">
+              <img src="assets/images/user-noah-2x.jpg" alt="Noah">
+            </div>
+            <div class="user__info">
+              <h4 class="user__name">
+                Noah
+              </h4>
+              <div class="user__data">
+                <p class="p3">
+                  Product Manager<br>
+                  noah.product.manager@gmail.com<br>
+                  +3 (8050) 678-03-24
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="user">
+            <div class="user__image">
+              <img src="assets/images/user-noah-2x.jpg" alt="Noah">
+            </div>
+            <div class="user__info">
+              <h4 class="user__name">
+                NoahNoahNoahNoahNoahNoah
+                ASd
+              </h4>
+              <div class="user__data">
+                <p class="p3">
+                  Product Manager<br>
+                  noah.product.super.manager@gmail.com<br>
+                  +3 (8050) 678-03-24
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="user">
+            <div class="user__image">
+              <img src="assets/images/user-noah-2x.jpg" alt="Noah">
+            </div>
+            <div class="user__info">
+              <h4 class="user__name">
+                Noah
+              </h4>
+              <div class="user__data">
+                <p class="p3">
+                  Product Manager<br>
+                  noah.product.manager@gmail.com<br>
+                  +3 (8050) 678-03-24
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="user">
+            <div class="user__image">
+              <img src="assets/images/user-noah-2x.jpg" alt="Noah">
+            </div>
+            <div class="user__info">
+              <h4 class="user__name">
+                Noah
+              </h4>
+              <div class="user__data">
+                <p class="p3">
+                  Product Manager<br>
+                  noah.product.manager@gmail.com<br>
+                  +3 (8050) 678-03-24
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="user">
+            <div class="user__image">
+              <img src="assets/images/user-noah-2x.jpg" alt="Noah">
+            </div>
+            <div class="user__info">
+              <h4 class="user__name">
+                Noah
+              </h4>
+              <div class="user__data">
+                <p class="p3">
+                  Product Manager<br>
+                  noah.product.manager@gmail.com<br>
+                  +3 (8050) 678-03-24
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="show-more abz-btn abz-btn--secondary">
+            Show more
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="signUp" class="registration">
+    <div class="container custom-bs-padding">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center">Register to get a work</h2>
+          <h5 class="text-center">
+            Attention! After successful registration and alert, update the
+            list of users in the block from the top
+          </h5>
+        </div>
+        <div class="col-12">
+          <form class="row">
+            <div class="col-md-4">
+              <div class="abz-input-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your name"
+                  class="input-field">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="abz-input-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Your email"
+                  class="input-field">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="abz-input-group">
+                <label for="phone">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="+38 (___) ___ __ __"
+                  class="input-field">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="abz-input-group select-group">
+                <select
+                  name="position"
+                  id="position"
+                  class="input-field">
+                  <option value="">Select your position</option>
+                  <option value="">Frontend developer</option>
+                  <option value="">Backend developer</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="abz-file-upload">
+                <input type="file" name="photo" id="photo">
+                <label for="photo">
+                  <div class="src">Upload your photo</div>
+                  <div class="upload-btn">
+                    <span class="d-none d-sm-block">Upload</span>
+                    <span class="d-sm-none">
+                      <img src="assets/images/upload.svg" alt="Upload">
+                    </span>
+                  </div>
+                </label>
+                <div class="hint">
+                  File format jpg  up to 5 MB, the minimum size of 70x70px
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="abz-btn" disabled>
+                Sign Up
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>

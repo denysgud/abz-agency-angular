@@ -1,0 +1,117 @@
+.site-footer {
+  background-color: #283593;
+  padding-bottom: 15px;
+  a {
+    color: #fff;
+    .svg-icon {
+      fill: #fff;
+    }
+    &:hover {
+      color: #EF6C00;
+      .svg-icon {
+        fill: #EF6C00;
+      }
+    }
+  }
+  .main-part {
+    border-bottom: 1px solid #5F5FC4;
+    .footer-logo {
+      margin: 31px 0 12px 0;
+      @media screen and (min-width: 768px) {
+        height: 83px;
+      }
+      img {
+        width: 135px;
+      }
+    }
+    .footer-navs {
+      margin-bottom: 27px;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        @media screen and (min-width: 768px) {
+          height: 83px;
+          justify-content: flex-end;
+          align-items: center;
+          flex-direction: row;
+        }
+        li {
+          padding: 2.5px 0;
+          text-align: center;
+          @media screen and (min-width: 768px) {
+            padding: 0 15px;
+            &:last-child {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .add-part {
+    padding-top: 24px;
+  }
+  .contacts {
+    font-size: 18px;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
+    @media screen and (min-width: 992px) {
+      font-size: 20px;
+    }
+    li {
+      margin-bottom: 11px;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 22px;
+      }
+      @media screen and (min-width: 992px) {
+        margin-bottom: 16px;
+      }
+    }
+    .contacts-img {
+      display: inline-block;
+      width: 30px;
+    }
+  }
+  .add-links {
+    li {
+      margin-bottom: 9px;
+    }
+  }
+  .copyrights {
+    margin-top: 1px;
+    margin-bottom: 14px;
+    font-size: 11px;
+    text-align: center;
+    @media screen and (min-width: 576px) {
+      text-align: left;
+      margin-top: 21px;
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
+  }
+  .socials {
+    display: flex;
+    justify-content: center;
+    @media screen and (min-width: 768px) {
+      justify-content: flex-end;
+    }
+    li {
+      padding: 16px 10px;
+      @media screen and (min-width: 768px) {
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

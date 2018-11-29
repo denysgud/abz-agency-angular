@@ -1,0 +1,136 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
+  .logo {
+    height: 64px;
+    img {
+      width: 135px;
+    }
+  }
+  nav {
+    ul {
+      margin: 0;
+      padding-left: 0;
+      padding-top: 30px;
+      @media screen and (min-width: 992px) {
+        display: flex;
+        height: 64px;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
+      }
+    }
+    li {
+      list-style: none;
+      padding: 22px 0 0 10px;
+      &:first-child {
+        padding-top: 0;
+      }
+      @media screen and (min-width: 992px) {
+        padding: 0 15px;
+      }
+    }
+  }
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    padding: 34px 0 25px 25px;
+    border-bottom: 1px solid #ccc;
+    @media screen and (min-width: 992px) {
+      align-items: center;
+      flex-direction: row;
+      height: 64px;
+      padding: 0;
+      border: none;
+    }
+    .user-name {
+      margin-top: 14px;
+      @media screen and (min-width: 992px) {
+        order: 0;
+        text-align: right;
+        margin: 0;
+      }
+      .nickname {
+        font-size: 20px;
+        @media screen and (min-width: 992px) {
+          font-size: 14px;
+        }
+      }
+      .email {
+        font-size: 13px;
+        position: relative;
+        bottom: -2px;
+        right: 2px;
+        @media screen and (min-width: 992px) {
+          font-size: 12px;
+          bottom: 1px;
+        }
+      }
+    }
+    .user-img {
+      @media screen and (min-width: 992px) {
+        order: 1;
+      }
+      img {
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        @media screen and (min-width: 992px) {
+          width: 40px;
+          height: 40px;
+          margin: 0 16px 0 11px;
+        }
+      }
+    }
+    .auth-icon {
+      @media screen and (min-width: 992px) {
+        order: 2;
+      }
+    }
+  }
+  @media screen and (min-width: 992px) { /* Disabling animations on desktop screens */
+    #menuContainer {
+      transform: none !important;
+    }
+    #mobMenu {
+      background: none !important;
+    }
+  }
+  @media screen and (max-width: 991.9px) {
+    #mobMenu {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+      z-index: 110;
+    }
+    #menuContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      width: 260px;
+      bottom: 0;
+      padding: 0 15px;
+      z-index: 120;
+      transform: translateX(-103%);
+    }
+    .mob-menu-icon {
+      height: 64px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      img {
+        padding: 15px;
+        margin-right: -15px;
+        cursor: pointer;
+      }
+    }
+  }
+}
