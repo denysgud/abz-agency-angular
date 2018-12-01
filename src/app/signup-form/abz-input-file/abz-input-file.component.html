@@ -1,0 +1,25 @@
+<div
+  class="abz-file-upload"
+  [formGroup]="userForm">
+  <input
+    type="file"
+    id="photo"
+    formControlName="photo"
+    (change)="inputChanged($event)">
+  <label for="photo">
+    <div
+      class="src"
+      #inputCont>
+      Upload your photo
+    </div>
+    <div class="upload-btn">
+      <span class="d-none d-sm-block">Upload</span>
+      <span class="d-sm-none">
+        <img src="assets/images/upload.svg" alt="Upload">
+      </span>
+    </div>
+  </label>
+  <div class="hint">
+    File format jpg  up to 5 MB, the minimum size of 70x70px
+  </div>
+</div>

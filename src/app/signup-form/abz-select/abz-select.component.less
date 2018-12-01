@@ -1,0 +1,85 @@
+.abz-select {
+  select {
+    position: absolute;
+    max-height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}
+.abz-select-selected {
+  &:before {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 9px;
+    top: 24px;
+    right: 15px;
+    background-image: url("../../../assets/images/caret-down.svg");
+    background-repeat: no-repeat;
+    transition: transform .3s ease-in-out;
+  }
+  /*style the arrow inside the select element:*/
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    height: 56px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #B7B7B7;
+    padding: 15px;
+  }
+}
+/*style the items (options), including the selected item:*/
+.select-items-wrapper div, .abz-select-selected {
+  color: #757575;
+  padding: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+/*style items (options):*/
+.abz-select-items {
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  transition: max-height .25s ease-in-out;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .5);
+  .select-items-wrapper {
+    background-color: #fff;
+    border-radius: 3px;
+    div {
+      &:hover {
+        background-color: #FCE2CC;
+      }
+      &.selected {
+        color: #FC7E17;
+      }
+    }
+  }
+}
+.abz-select-selected {
+  &.active {
+    border-width: 2px;
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+}
+.abz-select {
+  select {
+    &.ng-dirty + .abz-select-selected {
+      color: #000;
+    }
+    &:focus {
+      outline: none;
+      & + .abz-select-selected {
+        border-width: 2px;
+      }
+    }
+  }
+}

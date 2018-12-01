@@ -1,0 +1,66 @@
+<section id="signUp" class="registration">
+  <div class="container custom-bs-padding">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center">Register to get a work</h2>
+        <h5 class="text-center">
+          Attention! After successful registration and alert, update the
+          list of users in the block from the top
+        </h5>
+      </div>
+      <div class="col-12">
+        <form
+          class="row"
+          [formGroup]="userForm"
+          (ngSubmit)="submitForm()">
+          <div class="col-md-4">
+            <div class="abz-input-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                placeholder="Your name"
+                class="input-field"
+                formControlName="name">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="abz-input-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                placeholder="Your email"
+                class="input-field"
+                formControlName="email">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="abz-input-group">
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                placeholder="+38 (___) ___ __ __"
+                class="input-field"
+                formControlName="phone">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <app-abz-select
+              [options]="positions"
+              [group]="userForm"
+              [controlName]="'position_id'"></app-abz-select>
+          </div>
+          <div class="col-md-6">
+            <app-abz-input-file [group]="userForm"></app-abz-input-file>
+          </div>
+          <div class="col-12">
+            <button
+              class="abz-btn"
+              [disabled]="!userForm.valid">
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<div
+  class="abz-input-group abz-select"
+  [formGroup]="userForm">
+  <select
+    formControlName="position_id"
+    (keydown)="openCustomSelect($event)">
+    <option value="">Select your position</option>
+    <option
+      *ngFor="let option of options"
+      [value]="option.id">{{option.name}}</option>
+  </select>
+  <div
+    #selectCont
+    class="abz-select-selected input-field"
+    (click)="toggleSelect($event)">
+    Select your position
+  </div>
+  <div
+    #selectItems
+    class="abz-select-items">
+    <div class="select-items-wrapper">
+      <div
+        *ngFor="let option of options"
+        [attr.data-value]="option.id"
+        (click)="chooseItem($event, option.id, option.name)"
+        [ngClass]="{'selected': selectValue == option.id}">
+        {{option.name}}
+      </div>
+    </div>
+  </div>
+</div>
