@@ -3,32 +3,61 @@ main {
 }
 .about-assignment {
   background-color: #161547;
-  background-image: url("../assets/images/bg-1.jpg");
+  background-image: url("../assets/images/bg-1-sm.jpg");
   background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 64px 0 71px;
   text-align: center;
+  
+  /* Retina screens background */
+  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), 
+  only screen and (-moz-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min-device-pixel-ratio: 1.5) {
+    background-image: url("../assets/images/bg-1-md.jpg");
+  }
 
+  @media screen and (min-width: 500px) {
+    background-image: url("../assets/images/bg-1-md.jpg");
+    /* Retina screens background */
+    @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), 
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url("../assets/images/bg-1.jpg");
+    }
+  }
   @media screen and (min-width: 768px) {
     padding: 113px 0 121px;
     text-align: left;
   }
   @media screen and (min-width: 992px) {
     padding: 133px 0 161px;
+    background-image: url("../assets/images/bg-1-lg.jpg");
+    /* Retina screens background */
+    @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), 
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url("../assets/images/bg-1.jpg");
+    }
   }
   @media screen and (min-width: 1200px) {
     padding: 133px 0 139px;
   }
-
-  /* Retina screens background */
-  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), 
-  only screen and (-moz-min-device-pixel-ratio: 1.5),
-  only screen and (-o-min-device-pixel-ratio: 3/2),
-  only screen and (min-device-pixel-ratio: 1.5) {
-    background-image: url("../assets/images/bg-1-retina.jpg");
+  @media screen and (min-width: 1500px) {
+    background-image: url("../assets/images/bg-1.jpg");
+    /* Retina screens background */
+    @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), 
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url("../assets/images/bg-1-retina.jpg");
+    }
   }
+
 
   h1 {
     margin-bottom: 10px;
@@ -162,30 +191,59 @@ main {
 }
 .requirements {
   background-color: #2E54A3;
-  background-image: url("../assets/images/bg-2.jpg");
+  background-image: url("../assets/images/bg-2-sm.jpg");
   background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 67px 0 70px;
-
-  @media screen and (min-width: 768px) {
-    padding: 114px 0 203px;
-  }
-  @media screen and (min-width: 992px) {
-    padding: 135px 0 126px;
-  }
-  @media screen and (min-width: 1200px) {
-    padding: 135px 0 63px;
-  }
   
   /* Retina screens background */
   @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), 
   only screen and (-moz-min-device-pixel-ratio: 1.5),
   only screen and (-o-min-device-pixel-ratio: 3/2),
   only screen and (min-device-pixel-ratio: 1.5) {
-    background-image: url("../assets/images/bg-2-retina.jpg");
+    background-image: url("../assets/images/bg-2-md.jpg");
   }
+
+  @media screen and (min-width: 500px) {
+    background-image: url("../assets/images/bg-2-md.jpg");
+    /* Retina screens background */
+    @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), 
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url("../assets/images/bg-2.jpg");
+    }
+  }
+  @media screen and (min-width: 768px) {
+    padding: 114px 0 203px;
+  }
+  @media screen and (min-width: 992px) {
+    padding: 135px 0 126px;
+    background-image: url("../assets/images/bg-2-lg.jpg");
+    /* Retina screens background */
+    @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), 
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url("../assets/images/bg-2.jpg");
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 135px 0 63px;
+  }
+  @media screen and (min-width: 1500px) {
+    background-image: url("../assets/images/bg-2.jpg");
+    /* Retina screens background */
+    @media only screen and (-Webkit-min-device-pixel-ratio: 1.5), 
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url("../assets/images/bg-2-retina.jpg");
+    }
+  }
+
 
   h2 {
     margin-bottom: 25px;
