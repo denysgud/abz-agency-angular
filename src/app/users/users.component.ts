@@ -41,4 +41,10 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  // Get users after form submitting
+  getUpdatedUsers(): void {
+    this.pageToLoad = 1;
+    this.getUsers();
+  }
+
 }

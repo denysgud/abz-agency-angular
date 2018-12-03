@@ -25,19 +25,22 @@ export class MinImageResolutionDirective implements Validator {
       if (file && file.type.search(/image/) != -1) {
         let img = new Image();
 
-        img.onload = function (e) {
-          if( e['path'][0].width >= width && e['path'][0].height >= height ) {
+        img.onload = function () {
+          let self: any = this; // Angular can't compile this.width/this.height
+          
+          if( self.width >= width && self.height >= height ) {
+            
             observer.next(null);
             observer.complete();
           } else {
-            observer.next({minImageResInvalid: true});
+            observer.next({minImgRes: true});
             observer.complete();
           }
         };
 
         img.src = window.URL.createObjectURL(file);
       } else {
-        observer.next({minImageResInvalid: true});
+        observer.next({minImgRes: true});
         observer.complete();
       }
       

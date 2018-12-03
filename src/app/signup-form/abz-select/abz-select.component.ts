@@ -1,24 +1,27 @@
 import {
   Component,
-  AfterViewInit,
+  OnDestroy,
   Input,
   ElementRef,
   ViewChild,
   Renderer2,
-  HostListener
+  HostListener,
+  OnInit
 } from '@angular/core';
 
 import { FormGroup } from '@angular/forms';
+import { Subject }    from 'rxjs';
 
 @Component({
   selector: 'app-abz-select',
   templateUrl: './abz-select.component.html',
   styleUrls: ['./abz-select.component.less']
 })
-export class AbzSelectComponent implements AfterViewInit {
+export class AbzSelectComponent implements OnInit, OnDestroy {
   @Input() public options: any[];
   @Input('group') public userForm: FormGroup;
   @Input() private controlName: string;
+  @Input() parentSubject: Subject<any>;
 
   @ViewChild('selectCont')
   private selectCont: ElementRef;
@@ -32,8 +35,18 @@ export class AbzSelectComponent implements AfterViewInit {
     private renderer: Renderer2
   ) { }
 
-  ngAfterViewInit() {
+  ngOnInit() {
+    this.parentSubject.subscribe(event => {
+      // Reset select value
+      this.renderer.setProperty(this.selectCont.nativeElement, 'innerText', 'Select your position');
+    });
+  }
 
+  ngOnDestroy() {
+    // needed if child gets re-created (eg on some model changes)
+    // note that subsequent subscriptions on the same subject will fail
+    // so the parent has to re-create parentSubject on changes
+    this.parentSubject.unsubscribe();
   }
 
   toggleSelect(e): void {
@@ -80,8 +93,6 @@ export class AbzSelectComponent implements AfterViewInit {
   };
 
   openCustomSelect(e): void {
-    console.log(e.keyCode);
-    
     /* Allow only tab */
     if (e.keyCode != '9') {
       e.preventDefault();

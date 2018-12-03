@@ -22,3 +22,8 @@ export class UserObj {
   sucess: boolean;
   user: User;
 }
+
+export class TokenObj {
+  sucess: boolean;
+  token: string;
+}

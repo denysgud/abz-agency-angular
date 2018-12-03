@@ -138,7 +138,7 @@
       </div>
     </div>
   </section>
-  <app-users></app-users>
-  <app-signup-form></app-signup-form>
+  <app-users #usersComp></app-users>
+  <app-signup-form [usersComp]="usersComp"></app-signup-form>
 </main>
 <app-footer></app-footer>

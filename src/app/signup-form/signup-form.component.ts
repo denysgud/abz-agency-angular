@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 import { PositionsService } from './positions.service';
+import { UsersService } from '../users/users.service';
 import { Position } from './positions';
+
+import { Subject }    from 'rxjs';
 
 @Component({
   selector: 'app-signup-form',
@@ -10,6 +13,13 @@ import { Position } from './positions';
   styleUrls: ['./signup-form.component.less']
 })
 export class SignupFormComponent implements OnInit {
+  @Input() usersComp: any;
+
+  public formSubmitting: boolean = false;
+  public formSubmittedSuccess: boolean = false;
+  public formSubmittedError: boolean = false;
+  public formSubmitAttempt: boolean = false;
+
   public positions: Position[];
   public userForm = this.fb.group({
     name: ['', [
@@ -39,13 +49,18 @@ export class SignupFormComponent implements OnInit {
         Validators.required,
         // appMaxFileSize(5) implemented as directive
         // appMinImageResolution("70x70") implemented as directive
+        // appAllowedImageFormats(['jpeg', [jpg]])
       ]
     ],
   });
 
+  // Child components notification
+  public parentSubject:Subject<any> = new Subject();
+
   constructor(
     private positionsService: PositionsService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private usersService: UsersService
   ) { }
 
   ngOnInit() {
@@ -60,6 +75,43 @@ export class SignupFormComponent implements OnInit {
   }
 
   submitForm(): void {
-    console.log(this.userForm.value); 
+    this.userForm.value.position_id = parseInt(this.userForm.value.position_id);
+    
+    if (this.userForm.valid) {
+      this.formSubmitting = true;
+      this.formSubmitAttempt = true;
+      this.createUser(this.userForm.value); 
+    }
+  }
+
+  createUser(userData): void {
+    this.usersService.getToken()
+    .subscribe(data => {      
+      this.usersService.createtUser(userData, data.token)
+      .subscribe(
+        data => {
+          this.formSubmitting = false;
+          this.formSubmittedSuccess = true;
+
+          // reset default form inputs
+          this.userForm.reset();
+      
+          // Notify custom components
+          this.notifyChildren();
+
+          // Update users block
+          this.usersComp.getUpdatedUsers();
+        },
+        error => {
+          this.formSubmitting = false;
+          this.formSubmittedError = true;
+        }
+      );
+    });
+  }
+
+  // Child components notification
+  notifyChildren() {
+    this.parentSubject.next('Form submitted');
   }
 }

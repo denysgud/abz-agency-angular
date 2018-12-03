@@ -64,9 +64,11 @@
 }
 .abz-select-selected {
   &.active {
-    border-width: 2px;
     &:before {
       transform: rotate(180deg);
+    }
+    &:after {
+      border-width: 2px;
     }
   }
 }
@@ -78,7 +80,19 @@
     &:focus {
       outline: none;
       & + .abz-select-selected {
-        border-width: 2px;
+        &:after {
+          border-width: 2px;
+        }
+      }
+    }
+    &.ng-touched.ng-invalid {
+      & + .abz-select-selected {
+        &:after {
+        border-color: #F44133;
+        }
+      }
+      & ~ .hint {
+        color: #F44133;
       }
     }
   }

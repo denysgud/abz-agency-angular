@@ -12,10 +12,10 @@
         <form
           class="row"
           [formGroup]="userForm"
-          (ngSubmit)="submitForm()">
+          (ngSubmit)="submitForm()"
+          novalidate>
           <div class="col-md-4">
             <div class="abz-input-group">
-              <label for="name">Name</label>
               <input
                 type="text"
                 placeholder="Your name"
@@ -24,22 +24,46 @@
                 required
                 minlength="2"
                 maxlength="60">
+              <label for="name">Name</label>
+              <div
+                class="hint"
+                *ngIf="userForm.get('name').touched">
+                <div
+                  *ngIf="userForm.get('name').hasError('required')">
+                  This filed is required
+                </div>
+                <div
+                  *ngIf="userForm.get('name').hasError('minlength')">
+                  Name must be at least 2 characters
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="abz-input-group">
-              <label for="email">Email</label>
               <input
                 type="email"
                 placeholder="Your email"
                 class="input-field"
                 formControlName="email"
                 required>
+              <label for="email">Email</label>
+              <div
+                class="hint"
+                *ngIf="userForm.get('email').touched">
+                <div
+                  *ngIf="userForm.get('email').hasError('required')">
+                  This filed is required
+                </div>
+                <div
+                  *ngIf="userForm.get('email').hasError('email')">
+                  Please enter valid email
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="abz-input-group">
-              <label for="phone">Phone</label>
               <input
                 type="tel"
                 placeholder="+38 (___) ___ __ __"
@@ -47,23 +71,58 @@
                 formControlName="phone"
                 required
                 maxlength="13">
+              <label for="phone">Phone</label>
+              <div
+                class="hint"
+                *ngIf="userForm.get('phone').touched">
+                <div
+                  *ngIf="userForm.get('phone').hasError('required')">
+                  This filed is required
+                </div>
+                <div
+                  *ngIf="userForm.get('phone').hasError('pattern')">
+                  Please enter valid phone
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-md-6">
             <app-abz-select
               [options]="positions"
               [group]="userForm"
-              [controlName]="'position_id'"></app-abz-select>
+              [controlName]="'position_id'"
+              [parentSubject]="parentSubject"></app-abz-select>
           </div>
           <div class="col-md-6">
-            <app-abz-input-file [group]="userForm"></app-abz-input-file>
+            <app-abz-input-file
+              [group]="userForm"
+              [parentSubject]="parentSubject">
+            </app-abz-input-file>
           </div>
           <div class="col-12">
             <button
               class="abz-btn"
               [disabled]="!userForm.valid">
-              Sign Up
+              <span *ngIf="!formSubmitting">Sign Up</span>
+              <div
+                class="abz-loader abz-loader--white"
+                *ngIf="formSubmitting">Loading...</div>
             </button>
+            <div
+              class="submit-status"
+              *ngIf="formSubmitAttempt">
+              <div
+                class="success"
+                *ngIf="formSubmittedSuccess">
+                New user successfully added!
+              </div>
+              <div
+                class="error"
+                *ngIf="formSubmittedError">
+                Unfortunately, an error occurred!<br>
+                Please, check the internet conection or try again later.
+              </div>
+            </div>
           </div>
         </form>
       </div>

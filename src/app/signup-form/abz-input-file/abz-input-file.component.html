@@ -23,7 +23,31 @@
       </span>
     </div>
   </label>
-  <div class="hint">
-    File format jpg  up to 5 MB, the minimum size of 70x70px
+  <div
+    class="hint"
+    *ngIf="userForm.get('photo').touched">
+    <div
+      *ngIf="userForm.get('photo').hasError('required')">
+      This filed is required
+    </div>
+    <div
+      *ngIf="userForm.get('photo').hasError('maxFileSize')">
+      This file is too large, allowed file size: {{maxFileSize}} MB
+    </div>
+    <div
+      *ngIf="userForm.get('photo').hasError('minImgRes')">
+      This file is too small, min file resolution: {{minImgRes}} px
+    </div>
+    <div
+      *ngIf="userForm.get('photo').hasError('allowedFormat')">
+      This file format is forbidden, allowed file formats: {{allowedFormats}}
+    </div>
+  </div>
+  <div
+    class="hint"
+    *ngIf="userForm.get('photo').untouched">
+    <div>
+      File format jpg  up to 5 MB, the minimum size of 70x70px
+    </div>
   </div>
 </div>

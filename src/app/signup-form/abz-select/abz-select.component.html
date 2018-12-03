@@ -29,4 +29,12 @@
       </div>
     </div>
   </div>
+  <div
+    class="hint"
+    *ngIf="userForm.get('position_id').touched">
+    <div
+      *ngIf="userForm.get('position_id').hasError('required')">
+      This filed is required
+    </div>
+  </div>
 </div>

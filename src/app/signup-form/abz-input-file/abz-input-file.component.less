@@ -45,6 +45,13 @@
       }
     }
   }
+  .hint {
+    font-size: 12px;
+    position: absolute;
+    top: 60px;
+    left: 17px;
+    color: #B7B7B7;
+  }
   input {
     width: 0.1px;
     height: 0.1px;
@@ -59,12 +66,15 @@
         }
       }
     }
-  }
-  .hint {
-    font-size: 12px;
-    position: absolute;
-    top: 60px;
-    left: 17px;
-    color: #B7B7B7;
+    &.ng-touched.ng-invalid {
+      & + label {
+        .src {
+          border-color: #F44133;
+        }
+      }
+      & ~ .hint div {
+        color: #F44133;
+      }
+    }
   }
 }

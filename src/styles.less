@@ -176,12 +176,15 @@ ul {
     color: #B7B7B7;
     font-size: 12px;
     padding: 0 3px;
+    transition: color .2s ease-in-out;
   }
   .hint {
     position: absolute;
-    bottom: -5px;
+    top: 60px;
+    left: 17px;
     font-size: 12px;
     color: #B7B7B7;
+    transition: color .2s ease-in-out;
   }
   .input-field {
     height: 56px;
@@ -189,9 +192,16 @@ ul {
     border-radius: 3px;
     border: 1px solid #B7B7B7;
     padding: 15px;
+    transition: border-color .2s ease-in-out;
     &:focus {
       outline: none;
       border-width: 2px;
+    }
+    &.ng-touched.ng-invalid {
+      border-color: #F44133;
+      & ~ label, & ~ .hint div {
+        color: #F44133;
+      }
     }
   }
 }
@@ -224,6 +234,14 @@ ul {
   }
   &:after {
     left: 7.5px;
+  }
+  &.abz-loader--white {
+    color: #fff;
+    background: #fff;
+    &:before,
+    &:after {
+      background: #fff;
+    }
   }
 }
 
