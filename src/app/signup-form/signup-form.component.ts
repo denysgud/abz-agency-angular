@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 import { PositionsService } from './positions.service';
 import { Position } from './positions';
@@ -11,16 +11,41 @@ import { Position } from './positions';
 })
 export class SignupFormComponent implements OnInit {
   public positions: Position[];
-  public userForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-    phone: new FormControl(''),
-    position_id: new FormControl(''),
-    photo: new FormControl(''),
+  public userForm = this.fb.group({
+    name: ['', [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(60)
+      ]
+    ],
+    email: ['', [
+        Validators.required,
+        Validators.email
+      ]
+    ],
+    phone: ['', [
+        Validators.required,
+        Validators.pattern(/^(\+380)[0-9]{9}/),
+        Validators.maxLength(13)
+      ]
+    ],
+    position_id: ['', [
+        Validators.required,
+        Validators.pattern(/[0-9]+/),
+        Validators.min(1)
+      ]
+    ],
+    photo: ['', [
+        Validators.required,
+        // appMaxFileSize(5) implemented as directive
+        // appMinImageResolution("70x70") implemented as directive
+      ]
+    ],
   });
 
   constructor(
-    private positionsService: PositionsService
+    private positionsService: PositionsService,
+    private fb: FormBuilder
   ) { }
 
   ngOnInit() {

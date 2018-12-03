@@ -12,6 +12,9 @@ import { UsersComponent } from './users/users.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { AbzSelectComponent } from './signup-form/abz-select/abz-select.component';
 import { AbzInputFileComponent } from './signup-form/abz-input-file/abz-input-file.component';
+import { MaxFileSizeValidator } from './signup-form/abz-input-file/max-file-size.directive';
+import { MinImageResolutionDirective } from './signup-form/abz-input-file/min-image-resolution.directive';
+import { AllowedImageFormatsDirective } from './signup-form/abz-input-file/allowed-image-formats.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { AbzInputFileComponent } from './signup-form/abz-input-file/abz-input-fi
     UsersComponent,
     SignupFormComponent,
     AbzSelectComponent,
-    AbzInputFileComponent
+    AbzInputFileComponent,
+    MaxFileSizeValidator,
+    MinImageResolutionDirective,
+    AllowedImageFormatsDirective
   ],
   imports: [
     BrowserModule,

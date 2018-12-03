@@ -3,6 +3,7 @@
   [formGroup]="userForm">
   <select
     formControlName="position_id"
+    required
     (keydown)="openCustomSelect($event)">
     <option value="">Select your position</option>
     <option

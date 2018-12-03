@@ -5,7 +5,11 @@
     type="file"
     id="photo"
     formControlName="photo"
-    (change)="inputChanged($event)">
+    (change)="inputChanged($event)"
+    appMaxFileSize="{{maxFileSize}}"
+    appMinImageResolution="{{minImgRes}}"
+    appAllowedImageFormats="{{allowedFormats}}"
+    required>
   <label for="photo">
     <div
       class="src"

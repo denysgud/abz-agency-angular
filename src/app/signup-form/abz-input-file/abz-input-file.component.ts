@@ -16,6 +16,10 @@ import { FormGroup } from '@angular/forms';
 })
 export class AbzInputFileComponent implements OnInit {
   @Input('group') public userForm: FormGroup;
+
+  maxFileSize: number = 5; // MB
+  minImgRes: string = "70x70" // 70px width x 70px height
+  allowedFormats: string[] = ['jpeg', 'jpg'];
   
   @ViewChild('inputCont')
   private inputCont: ElementRef;
@@ -31,5 +35,6 @@ export class AbzInputFileComponent implements OnInit {
     let fileName = e.currentTarget.value.split( '\\' ).pop() || 'Upload your photo';
     
     this.renderer.setProperty(this.inputCont.nativeElement, 'innerText', fileName);
+    
   }
 }
