@@ -110,18 +110,28 @@
                 *ngIf="formSubmitting">Loading...</div>
             </button>
             <div
-              class="submit-status"
-              *ngIf="formSubmitAttempt">
+              class="submit-status centered-block"
+              *ngIf="formSubmittedError || formSubmittedSuccess">
               <div
                 class="success"
                 *ngIf="formSubmittedSuccess">
-                New user successfully added!
+                <h3>Congratulations</h3>
+                You have successfully passed the registration
+                <a
+                  class="abz-btn-text"
+                  href="#users"
+                  (click)="closeAlert()">OK</a>
               </div>
               <div
                 class="error"
                 *ngIf="formSubmittedError">
+                <h3>Error</h3>
                 Unfortunately, an error occurred!<br>
                 Please, check the internet conection or try again later.
+                <a
+                  class="abz-btn-text"
+                  href="#users"
+                  (click)="closeAlert()">OK</a>
               </div>
             </div>
           </div>

@@ -18,7 +18,6 @@ export class SignupFormComponent implements OnInit {
   public formSubmitting: boolean = false;
   public formSubmittedSuccess: boolean = false;
   public formSubmittedError: boolean = false;
-  public formSubmitAttempt: boolean = false;
 
   public positions: Position[];
   public userForm = this.fb.group({
@@ -91,8 +90,7 @@ export class SignupFormComponent implements OnInit {
     
     if (this.userForm.valid) {
       this.formSubmitting = true;
-      this.formSubmitAttempt = true;
-      this.createUser(formData); 
+      this.createUser(formData);
     }
   }
 
@@ -114,14 +112,17 @@ export class SignupFormComponent implements OnInit {
           // Update users block
           this.usersComp.getUpdatedUsers();
         },
-        error => {
-          console.log(error);
-          
+        error => {          
           this.formSubmitting = false;
           this.formSubmittedError = true;
         }
       );
     });
+  }
+
+  closeAlert(): void {
+    this.formSubmittedSuccess = false;
+    this.formSubmittedError = false;
   }
 
   // Listen image changes

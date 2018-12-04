@@ -45,19 +45,23 @@
       }
     }
     .submit-status {
-      position: absolute;
-      top: 100px;
+      position: fixed;
+      top: 0;
       left: 0;
       width: 100%;
-      text-align: center;
-      @media screen and (min-width: 768px) {
-        top: 70px;
+      height: 100%;
+      background: rgba(0, 0, 0, .5);
+      z-index: 100;
+      div {
+        width: 290px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 3px;
       }
-      .success {
-        color: #0a0;
-      }
-      .error {
-        color: #F44133;
+      a {
+        display: block;
+        margin-top: 20px;
+        text-align: right;
       }
     }
   }
