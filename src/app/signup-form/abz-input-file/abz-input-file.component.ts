@@ -3,9 +3,11 @@ import {
   OnInit,
   OnDestroy,
   Input,
+  Output,
   Renderer2,
   ViewChild,
-  ElementRef
+  ElementRef,
+  EventEmitter
 } from '@angular/core';
  
 import { FormGroup } from '@angular/forms';
@@ -19,6 +21,7 @@ import { Subject }    from 'rxjs';
 export class AbzInputFileComponent implements OnInit, OnDestroy {
   @Input('group') public userForm: FormGroup;
   @Input() parentSubject: Subject<any>;
+  @Output() imageAdded = new EventEmitter<any>();
 
   maxFileSize: number = 5; // MB
   minImgRes: string = "70x70" // 70px width x 70px height
@@ -50,6 +53,12 @@ export class AbzInputFileComponent implements OnInit, OnDestroy {
     let fileName = e.currentTarget.value.split( '\\' ).pop() || 'Upload your photo';
     
     this.renderer.setProperty(this.inputCont.nativeElement, 'innerText', fileName);
+    
+    if (e.currentTarget.files[0]) {
+      this.imageAdded.emit(e.currentTarget.files[0])
+    } else {
+      this.imageAdded.emit('')
+    }
     
   }
 }

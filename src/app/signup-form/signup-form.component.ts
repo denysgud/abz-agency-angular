@@ -35,7 +35,7 @@ export class SignupFormComponent implements OnInit {
     ],
     phone: ['', [
         Validators.required,
-        Validators.pattern(/^(\+380)[0-9]{9}/),
+        Validators.pattern(/^[\+]{0,1}380([0-9]{9})$/),
         Validators.maxLength(13)
       ]
     ],
@@ -53,6 +53,7 @@ export class SignupFormComponent implements OnInit {
       ]
     ],
   });
+  private imageToUpload: File;
 
   // Child components notification
   public parentSubject:Subject<any> = new Subject();
@@ -75,12 +76,23 @@ export class SignupFormComponent implements OnInit {
   }
 
   submitForm(): void {
+    const formValue = this.userForm.value;
+    const formData = new FormData();
+
     this.userForm.value.position_id = parseInt(this.userForm.value.position_id);
+    
+    Object.keys(formValue).forEach(function (item) {
+      if (item != 'photo') {        
+        formData.append(item, formValue[item]);
+      }
+    });
+    
+    formData.append('photo', this.imageToUpload);
     
     if (this.userForm.valid) {
       this.formSubmitting = true;
       this.formSubmitAttempt = true;
-      this.createUser(this.userForm.value); 
+      this.createUser(formData); 
     }
   }
 
@@ -103,11 +115,18 @@ export class SignupFormComponent implements OnInit {
           this.usersComp.getUpdatedUsers();
         },
         error => {
+          console.log(error);
+          
           this.formSubmitting = false;
           this.formSubmittedError = true;
         }
       );
     });
+  }
+
+  // Listen image changes
+  onImageAdded(file): void {
+    this.imageToUpload = file;
   }
 
   // Child components notification

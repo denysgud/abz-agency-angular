@@ -96,7 +96,8 @@
           <div class="col-md-6">
             <app-abz-input-file
               [group]="userForm"
-              [parentSubject]="parentSubject">
+              [parentSubject]="parentSubject"
+              (imageAdded)="onImageAdded($event)">
             </app-abz-input-file>
           </div>
           <div class="col-12">

@@ -8,7 +8,6 @@ import { UserObj, UsersObj, User, TokenObj } from './user';
  
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json',
     'Token': ''
   })
 };
@@ -39,6 +38,8 @@ export class UsersService {
 
   /** GET user by id */
   createtUser(userData: User, token: string): Observable<any> {
+    console.log(userData);
+    
     httpOptions.headers =
       httpOptions.headers.set('Token', token);
     return this.http.post<UserObj>(this.usersUrl, userData, httpOptions);
